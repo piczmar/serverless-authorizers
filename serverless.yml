@@ -1,0 +1,17 @@
+service: serverless-authorizers
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+  stage: dev
+  region: us-east-1
+
+
+functions:
+  helloRest:
+    handler: helloRest.handler
+    events:
+      - http:
+          path: hello/rest
+          method: get
