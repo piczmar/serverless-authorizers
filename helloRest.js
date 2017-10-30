@@ -4,7 +4,7 @@ module.exports.handler = (event, context, callback) => {
   const response = {
     statusCode: 200,
     body: JSON.stringify({
-      message: 'Hello REST!',
+      message: 'Hello REST, authenticated user: ' + event.requestContext.authorizer.principalId + ' !',
       input: event,
     }),
   };
