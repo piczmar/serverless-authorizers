@@ -18,6 +18,13 @@ functions:
           path: hello/rest
           method: get
           authorizer: ${self:custom.authorizer.users}
+  helloRestIam:
+    handler: helloRestIam.handler
+    events:
+      - http:
+          path: hello/restiam
+          method: get
+          authorizer: aws_iam
 
 custom:
   stage: ${opt:stage, self:provider.stage}
